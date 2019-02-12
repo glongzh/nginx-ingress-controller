@@ -1,0 +1,9 @@
+sudo: required
+
+services:
+- docker
+
+script:
+- docker build -t glongzh/nginx-ingress-controller:0.22.0 .
+- docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+- docker push glongzh/nginx-ingress-controller:0.22.0
